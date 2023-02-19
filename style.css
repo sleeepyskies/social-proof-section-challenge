@@ -1,0 +1,205 @@
+:root {
+    /* Google fonts */
+    --ff-spartan: 'League Spartan', sans-serif;
+    /* Primary colors */
+    --clr-prmy-magenta: hsl(300, 43%, 22%);
+    --clr-prmy-pink: hsl(333, 80%, 67%);
+    /* Neutral colors */
+    --clr-ntrl-dark-magenta: hsl(303, 10%, 53%);
+    --clr-ntrl-light-magenta: hsl(300, 24%, 96%);
+    --clr-ntrl-white: hsl(0, 0%, 100%);
+}
+
+/* General grid setup and layout */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--ff-spartan);
+    background-color: var(--clr-ntrl-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/bg-pattern-bottom-mobile.svg), 
+                        url(images/bg-pattern-top-mobile.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom, top;
+}
+
+.wrapper {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto auto;
+    padding: 4rem 1.5rem;
+}
+
+/* Styling the overview-component */
+
+.overview-component {
+    display: inline-block;
+}
+
+h1, .overview p, .rating p, .rating{
+    text-align: center;
+}
+
+h1 {
+    color: var(--clr-prmy-magenta);
+    line-height: 0.8em;
+    padding: 0 2rem;
+    font-weight: 700;
+    font-size: 2.5em;
+}
+
+.overview p {
+    color: var(--clr-ntrl-dark-magenta);
+    margin: 2.3rem 0;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+.rating-box {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    color: var(--clr-prmy-magenta);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.rating {
+    background-color: var(--clr-ntrl-light-magenta);
+    border-radius: 0.5rem;
+    padding: 1.15rem 0rem;
+    margin-bottom: 1rem;
+}
+
+/* Styling the review-component */
+
+.review-component {
+    margin-top: 1.75rem;
+}
+
+.review {
+    background-color: var(--clr-prmy-magenta);
+    color: var(--clr-ntrl-white);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding: 2.2rem 2rem;
+}
+
+.review-person {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+}
+
+.review-person img {
+    max-width: 40px;
+    border-radius: 20px;
+}
+
+.review-person p {
+    font-weight: 700;
+    margin-left: 1.3rem;
+}
+
+.review-person p span {
+    display: block;
+    font-weight: 400;
+    color: var(--clr-prmy-pink);
+}
+
+.review p {
+    font-size: 1.05em;
+}
+
+/* Style the desktop layout */
+
+@media only screen and (min-width: 768px) {
+    /* Overall structure/layout */
+    body {
+        background-image: url(images/bg-pattern-bottom-desktop.svg), 
+                url(images/bg-pattern-top-desktop.svg);
+        background-position: right, top left;
+    }
+
+    .wrapper {
+        padding: 7.5rem 10.25rem;
+    }
+
+    /* Overview component styles */
+
+    .overview-component {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h1 {
+        text-align: left;
+        font-size: 3.5em;
+        padding: 0;
+        padding-right: 10rem;
+    }
+
+    .overview  p {
+        text-align: left;
+        padding-right: 7rem;
+    }
+
+    .rating-box {
+        display: block;
+
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        padding: 1.05rem 1.9rem;
+        max-width: 27.5rem;
+    }
+
+    .rating p {
+        margin-left: 1.95rem;
+    }
+
+    .rating:nth-child(2) {
+        margin: 0 auto;
+    }
+
+    .rating:last-child {
+        float: right;
+        margin-top: 1rem;
+    }
+
+    /* Review component styling */
+    .review-component {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2.025rem;
+    }
+
+    .review {
+        padding-bottom: 0;
+        min-height: 14.65rem;
+    }
+
+    .review:first-child {
+        margin-bottom: 4.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .review:nth-child(2) {
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .review:last-child {
+        margin-top: 2rem;
+    }
+}
